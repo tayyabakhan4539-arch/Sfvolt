@@ -3,7 +3,9 @@ import sqlite3
 import random
 import logging
 import time
-import aiohttp
+import os
+from aiohttp
+import web
 import hmac
 import hashlib
 import json
@@ -2981,7 +2983,19 @@ async def cmd_listemoji(m: Message):
 # ==============================================================================
 # 25. BOOTSTRAPPING & MAIN
 # ==============================================================================
+async def handle(request):
+    return web.Response(text="Bot is running!")
+
+async def start_web_server():
+    app = web.Application()
+    app.router.add_get("/", handle)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    port = int(os.environ.get("PORT", 10000))
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
 async def main() -> None:
+    await start_web_server()
     init_db()
     logger.info("Initializing DB structure...")
     migrate_categories()
