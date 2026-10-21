@@ -58,9 +58,9 @@ VIP_PRICE_INR = 1000.0
 WELCOME_STICKER_ID = "CAACAgIAAxkBAAEU-WZmH_..."  # Replace with your sticker ID
 
 FIXED_CATEGORIES = [
-    "📱ANDROID NON ROOT PANEL",
-    "📱ANDROID ROOT PANEL",
-    "📱IPHONE PANEL"
+    "ANDROID NON ROOT PANEL",
+    "ANDROID ROOT PANEL",
+    "IPHONE PANEL"
 ]
 
 # ==============================================================================
@@ -2890,7 +2890,7 @@ def premium_buttons(markup):
                     rest = b.text.lstrip()[mo.end():].strip()
                     emoji_id = AUTO_EMOJI_MAP.get(_norm_emoji(mo.group(1)))
                     if emoji_id and rest:
-                        b = b.model_copy(update={"text": rest, "icon_custom_emoji_id": int(emoji_id)})
+                        b = b.model_copy(update={"text": rest, "icon_custom_emoji_id": None})
                         changed = True
             new_row.append(b)
         rows.append(new_row)
