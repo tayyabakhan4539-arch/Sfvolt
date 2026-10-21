@@ -4,8 +4,7 @@ import random
 import logging
 import time
 import os
-from aiohttp
-import web
+from aiohttp import web
 import hmac
 import hashlib
 import json
