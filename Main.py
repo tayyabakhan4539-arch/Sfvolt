@@ -58,9 +58,9 @@ VIP_PRICE_INR = 1000.0
 WELCOME_STICKER_ID = "CAACAgIAAxkBAAEU-WZmH_..."  # Replace with your sticker ID
 
 FIXED_CATEGORIES = [
-    "ANDROID NON ROOT PANEL",
-    "ANDROID ROOT PANEL",
-    "PC PANEL"
+    "📱ANDROID NON ROOT PANEL",
+    "📱ANDROID ROOT PANEL",
+    "📱IPHONE PANEL"
 ]
 
 # ==============================================================================
