@@ -60,7 +60,7 @@ WELCOME_STICKER_ID = "CAACAgIAAxkBAAEU-WZmH_..."  # Replace with your sticker ID
 FIXED_CATEGORIES = [
     "ANDROID NON ROOT PANEL",
     "ANDROID ROOT PANEL",
-    "IPHONE PANEL"
+    "PC PANEL"
 ]
 
 # ==============================================================================
