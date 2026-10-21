@@ -2999,6 +2999,7 @@ async def main() -> None:
         await bot.session.close()
 
 if __name__ == "__main__":
+    logger.info("System shutting down gracefully. Goodbye.")wn gracefully. Goodbye.")
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
