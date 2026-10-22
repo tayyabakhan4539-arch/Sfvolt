@@ -2805,11 +2805,12 @@ async def cmd_linkapi(m: Message):
                    f"Keys will now be generated automatically on purchase.", parse_mode='HTML')
     
 @dp.message(Command("apibalance"))
-    async def cmd_apibalance(m: Message):
+async def cmd_apibalance(m: Message):
     if m.from_user.id != ADMIN_ID: return
     ok, data = await galu_request("balance")
     if not ok: return await m.answer(f"❌ {html.escape(str(data))}", parse_mode='HTML')
-    await m.answer(f"💰 <b>Supplier wallet</b>\n<code>{html.escape(json.dumps(data, indent=2)[:3500])}</code>", parse_mode='HTML')
+    await m.answer(f"<b>Supplier wallet:</b>\n<code>{html.escape(json.dumps(data, indent=2))}</code>", parse_mode='HTML')
+
 
 @dp.message(Command("apiproducts"))
 async def cmd_apiproducts(m: Message):
@@ -2817,7 +2818,7 @@ async def cmd_apiproducts(m: Message):
     ok, data = await galu_request("products")
     if not ok: return await m.answer(f"❌ {html.escape(str(data))}", parse_mode='HTML')
     raw = json.dumps(data, indent=2, ensure_ascii=False).encode("utf-8")
-    await m.answer_document(BufferedInputFile(raw, filename="api_products.json"), caption="Supplier products (PIDs & stock)")
+    await m.answer_document(BufferedInputFile(raw, filename="api_products.json"))
 
 # ==============================================================================
 # 24c. GLOBAL PREMIUM EMOJI ENGINE
