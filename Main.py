@@ -2803,7 +2803,19 @@ async def cmd_linkapi(m: Message):
     await m.answer(f"✅ Product #{p_id} linked to API PID <code>{html.escape(api_pid)}</code>"
                    f"{' | duration <code>' + html.escape(duration) + '</code>' if duration else ''}\n"
                    f"Keys will now be generated automatically on purchase.", parse_mode='HTML')
+@dp.message(Command("unlinkallapi"))
+async def cmd_unlink_all_api(m: Message):
+if m.from_user.id != ADMIN_ID:
+return
 
+db_query(
+    "UPDATE products SET api_product_id='', api_duration=''"
+)
+
+await m.answer(
+    "✅ All products have been unlinked from the API. "
+    "They will use local saved keys where available."
+)
 @dp.message(Command("apibalance"))
 async def cmd_apibalance(m: Message):
     if m.from_user.id != ADMIN_ID: return
