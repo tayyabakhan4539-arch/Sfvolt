@@ -34,7 +34,7 @@ from aiogram.types import (
 # ==============================================================================
 # 1. BOT CONFIGURATION & CONSTANTS
 # ==============================================================================
-BOT_TOKEN = "8519269631"
+BOT_TOKEN = "8519269631:AAGHY03ds8Yx7Qp-9KfE8U9XdAG-HeJnYrA"
 BOT_USERNAME = "@sfvolt_bot"
 ADMIN_ID = 7255956225
 ADMIN_CONTACT = "@sfvolt"
